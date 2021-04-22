@@ -6,8 +6,8 @@ import "../../App.css";
 import Topbar from "../Topbar";
 import Footer from "../Footer";
 
-export default function GaussElimination() {
-  const topic = "Gauss Elimination";
+export default function GaussJordan() {
+  const topic = "Gauss Jordan Elimination";
   const [btnState, setBtnState] = useState(false);
   const [output, setOutput] = useState([]);
   const [matrixA, setMatrixA] = useState(
@@ -36,11 +36,11 @@ export default function GaussElimination() {
   const handleSubmit = (e) => {
     if (btnState === false) {
       e.preventDefault();
-      gauss_elimination();
+      gauss_jordan();
     }
   };
-  const gauss_elimination = () => {
-    Axios.post("http://localhost:5000/api/GaussElimAPI", {
+  const gauss_jordan = () => {
+    Axios.post("http://localhost:5000/api/GaussJordanAPI", {
       matrixA: matrixA,
       matrixB: matrixB,
     })
